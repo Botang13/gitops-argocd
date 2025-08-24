@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simple-nginx-index
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head><title>Aplikasi NGINX</title></head>
+    <body>
+      <h1>Ini tampilan dari NGINX dan halo nama saya Herbowo Prasetyo</h1>
+    </body>
+    </html>

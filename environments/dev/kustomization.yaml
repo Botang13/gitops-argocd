@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../apps/simple-nginx
+  - ../../apps/simple-httpd
+
+# Override nilai nama satu kali di sini (opsional)
+configMapGenerator:
+  - name: simple-nginx-index
+    behavior: merge
+    literals:
+      - index.html=<!DOCTYPE html><html><body><h1>Ini tampilan dari Aplikasi NGINX dan halo nama saya Herbowo Prasetyo</h1></body></html>
+  - name: simple-httpd-index
+    behavior: merge
+    literals:
+    - index.html=<!DOCTYPE html><html><body><h1>Ini tampilan dari Aplikasi HTTPD dan halo nama saya Herbowo Prasetyo</h1></body></html>
